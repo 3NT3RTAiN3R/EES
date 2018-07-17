@@ -108,7 +108,7 @@ if __name__ == '__main__':
             text_file.write("%s;%s;%s;\n" % ('A',abstandA,abstandAfirst))
             text_file.write("%s;%s;%s;\n" % ('B',abstandB,abstandBfirst))
             text_file.write("%s;%s;%s;\n" % ('1',abstand1,abstand1first))
-            text_file.write("%s;%s;%s\n" % ('2',abstand2,abstand2first))
+            text_file.write("%s;%s;%s;\n" % ('2',abstand2,abstand2first))
        	    text_file.close()
         # Beim Abbruch durch STRG+C resetten
     except KeyboardInterrupt:

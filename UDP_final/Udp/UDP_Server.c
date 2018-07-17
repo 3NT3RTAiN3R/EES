@@ -25,10 +25,11 @@ int main() {
 	char len[1024];
 	char msg2[] = "Empfangen";
 	char msg3[1024];
-        char valueA[1024];
-        char valueB[1024];
-        char value1[1024];
-        char value2[1024];
+        char valueA[1024] = "A;0;0;";
+        char valueB[1024] = "B;0;0;";
+        char value1[1024] = "1;0;0;";
+        char value2[1024] = "2;0;0;";
+        char valueTempSensor[1024]= "TempSensor;0;0;";
 	int jitterRound = 0;
 	char* ptr;
 	FILE *fp;
@@ -75,13 +76,16 @@ int main() {
 			//printf("\n\n buffer  = %s\n\n",buffer); 
 			//printf("\n\n buffer2 = %s\n\n",buffer2); 
 			ptr = strtok(buffer,";");
+			//printf("ptr = %s \n\n",ptr);
 			if(strcmp(ptr,"GUI") == 0){
-			   strcat(valueA,valueB);
-		           strcat(valueA,value1);
-		           strcat(valueA,value2);
 			   strcpy(msg3 , valueA);
+			   strcat(msg3,valueB);
+		           strcat(msg3,value1);
+		           strcat(msg3,value2);
+			   strcat(msg3,valueTempSensor);
           		   sendto(sfd, msg3, sizeof(msg3), 0, (struct sockaddr *) &client_addr, sizeof(client_addr));
-			   printf("\n\n\n\nAn die Gui wird übergeben\n\n%s\n\n\n\n\n",msg3);	
+			   strcpy(msg3,"");
+			   //printf("\n\n\n\nAn die Gui wird übergeben\n\n%s\n\n\n\n\n",msg3);	
 			}else if (strcmp(ptr,"A")== 0){
 			  strcpy(valueA , buffer2); 
 	  		  //printf("\n\n valueA = %s\n\n",valueA); 
@@ -94,8 +98,10 @@ int main() {
 			}else if (strcmp(ptr,"2")== 0){
 			  strcpy(value2 , buffer2);
 	  		  //printf("\n\n value2 = %s\n\n",value2); 
+			}else if(strcmp(ptr,"TempSensor") == 0){
+			  strcpy(valueTempSensor,buffer2);	
 			}else{
-			 printf("nichts zwischen gespeichert");
+			 printf("nichts zwischen gespeichert\n");
 			}
       msgLen = 0;
       sendto(sfd, msg2, sizeof(msg2), 0, (struct sockaddr *) &client_addr, sizeof(client_addr));
@@ -113,7 +119,7 @@ int main() {
 			printf("RoundTripTime: 		%5.0lfms\n", roundTripTime);
 			printf("Ping: 			%5.0lfms\n", roundTripTime / 2);
 			jitterRound = diffJitter(jitterRound, roundTripTime, ++jitterCounter);
-			printf("Jitter: 		%5.0dms\n", jitterRound);
+			//printf("Jitter: 		%5.0dms\n", jitterRound);
 			printf("Dateizugriff. . .");
 			fp = fopen("log.txt", "a");
 			ptr = strtok(buffer,";");
