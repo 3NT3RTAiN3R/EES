@@ -41,14 +41,16 @@ namespace projekt1
                 lblOutSensorA.Text     = receivedMessage[1];
                 lblOutSensorAInit.Text = receivedMessage[2];
 
-                lblOutSensorB.Text     = receivedMessage[5];
-                lblOutSensorBInit.Text = receivedMessage[4];
+                lblOutSensorB.Text     = receivedMessage[4];
+                lblOutSensorBInit.Text = receivedMessage[5];
 
-                lblOutSensor1.Text     = receivedMessage[8];
-                lblOutSensor1Init.Text = receivedMessage[7];
+                lblOutSensor1.Text     = receivedMessage[7];
+                lblOutSensor1Init.Text = receivedMessage[8];
 
-                lblOutSensor2.Text     = receivedMessage[11];
-                lblOutSensor2Init.Text = receivedMessage[10];
+                lblOutSensor2.Text     = receivedMessage[10];
+                lblOutSensor2Init.Text = receivedMessage[11];
+
+                lblTemperaturOut.Text = receivedMessage[13];
             }
             //Console.Read();
             //return new string[]{ ID, current, zusatz };
@@ -78,6 +80,8 @@ namespace projekt1
 
             lblOutSensor2.Text = "";
             lblOutSensor2Init.Text = "";
+
+            lblTemperaturOut.Text = "";
         }
     }
 }

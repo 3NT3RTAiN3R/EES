@@ -48,13 +48,15 @@
             this.lblSensorAleer = new System.Windows.Forms.Label();
             this.btnGuertel = new System.Windows.Forms.Button();
             this.btnRoomClear = new System.Windows.Forms.Button();
+            this.lblTemperatur = new System.Windows.Forms.Label();
+            this.lblTemperaturOut = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // header
             // 
             this.header.AutoSize = true;
             this.header.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.header.Location = new System.Drawing.Point(189, 9);
+            this.header.Location = new System.Drawing.Point(300, 9);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(309, 33);
             this.header.TabIndex = 0;
@@ -113,7 +115,7 @@
             // 
             this.lblOutSensorB.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblOutSensorB.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutSensorB.Location = new System.Drawing.Point(210, 186);
+            this.lblOutSensorB.Location = new System.Drawing.Point(523, 184);
             this.lblOutSensorB.Name = "lblOutSensorB";
             this.lblOutSensorB.Size = new System.Drawing.Size(158, 26);
             this.lblOutSensorB.TabIndex = 6;
@@ -122,7 +124,7 @@
             // 
             this.lblOutSensor1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblOutSensor1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutSensor1.Location = new System.Drawing.Point(210, 230);
+            this.lblOutSensor1.Location = new System.Drawing.Point(523, 228);
             this.lblOutSensor1.Name = "lblOutSensor1";
             this.lblOutSensor1.Size = new System.Drawing.Size(158, 26);
             this.lblOutSensor1.TabIndex = 7;
@@ -131,7 +133,7 @@
             // 
             this.lblOutSensor2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblOutSensor2.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutSensor2.Location = new System.Drawing.Point(210, 271);
+            this.lblOutSensor2.Location = new System.Drawing.Point(523, 269);
             this.lblOutSensor2.Name = "lblOutSensor2";
             this.lblOutSensor2.Size = new System.Drawing.Size(158, 26);
             this.lblOutSensor2.TabIndex = 8;
@@ -151,7 +153,7 @@
             // 
             this.lblOutSensor2Init.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblOutSensor2Init.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutSensor2Init.Location = new System.Drawing.Point(523, 271);
+            this.lblOutSensor2Init.Location = new System.Drawing.Point(210, 271);
             this.lblOutSensor2Init.Name = "lblOutSensor2Init";
             this.lblOutSensor2Init.Size = new System.Drawing.Size(158, 26);
             this.lblOutSensor2Init.TabIndex = 18;
@@ -160,7 +162,7 @@
             // 
             this.lblOutSensor1Init.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblOutSensor1Init.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutSensor1Init.Location = new System.Drawing.Point(523, 230);
+            this.lblOutSensor1Init.Location = new System.Drawing.Point(210, 230);
             this.lblOutSensor1Init.Name = "lblOutSensor1Init";
             this.lblOutSensor1Init.Size = new System.Drawing.Size(158, 26);
             this.lblOutSensor1Init.TabIndex = 17;
@@ -169,7 +171,7 @@
             // 
             this.lblOutSensorBInit.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblOutSensorBInit.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOutSensorBInit.Location = new System.Drawing.Point(523, 186);
+            this.lblOutSensorBInit.Location = new System.Drawing.Point(210, 186);
             this.lblOutSensorBInit.Name = "lblOutSensorBInit";
             this.lblOutSensorBInit.Size = new System.Drawing.Size(158, 26);
             this.lblOutSensorBInit.TabIndex = 16;
@@ -245,11 +247,32 @@
             this.btnRoomClear.UseVisualStyleBackColor = true;
             this.btnRoomClear.Click += new System.EventHandler(this.btnRoomClear_Click);
             // 
+            // lblTemperatur
+            // 
+            this.lblTemperatur.AutoSize = true;
+            this.lblTemperatur.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTemperatur.Location = new System.Drawing.Point(251, 342);
+            this.lblTemperatur.Name = "lblTemperatur";
+            this.lblTemperatur.Size = new System.Drawing.Size(116, 26);
+            this.lblTemperatur.TabIndex = 24;
+            this.lblTemperatur.Text = "Temperatur";
+            // 
+            // lblTemperaturOut
+            // 
+            this.lblTemperaturOut.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTemperaturOut.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTemperaturOut.Location = new System.Drawing.Point(373, 342);
+            this.lblTemperaturOut.Name = "lblTemperaturOut";
+            this.lblTemperaturOut.Size = new System.Drawing.Size(158, 26);
+            this.lblTemperaturOut.TabIndex = 25;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 322);
+            this.ClientSize = new System.Drawing.Size(757, 377);
+            this.Controls.Add(this.lblTemperaturOut);
+            this.Controls.Add(this.lblTemperatur);
             this.Controls.Add(this.btnRoomClear);
             this.Controls.Add(this.btnGuertel);
             this.Controls.Add(this.lblOutSensor2Init);
@@ -299,6 +322,8 @@
         private System.Windows.Forms.Label lblSensorAleer;
         private System.Windows.Forms.Button btnGuertel;
         private System.Windows.Forms.Button btnRoomClear;
+        private System.Windows.Forms.Label lblTemperatur;
+        private System.Windows.Forms.Label lblTemperaturOut;
     }
 }
 
