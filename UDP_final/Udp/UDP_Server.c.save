@@ -1,0 +1,67 @@
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <strings.h>
+#include <string.h>
+#include <netdb.h>
+#include <netinet/in.h>
+
+#define PORT 4030
+
+int main() {
+	int sfd=-1;
+	int msgLen=-1;
+	int bufferLen=-1;
+	struct sockaddr_in serv_addr,client_addr;
+	char buffer[1024];
+	char* who=NULL;
+	char* what=NULL;
+	char* msg=NULL;
+	char msg2[]="Empfangen";
+	
+
+	while(sfd==-1)
+	{
+		printf("Versuche Socket zu erstellen . . .\n");
+		//aus man: int socket(int domain, int type, int protocol);
+		sfd=socket(AF_INET,SOCK_DGRAM,0);
+		if(sfd==-1)
+			perror("Versuch der Erstellung des Sockets misslungen. Vorgang wird wiederholt.\n\n");
+	}
+	printf("Socket wurde erstellt. Der Socket-FileDiskriptor ist %i.\n\n",sfd);
+	//aus man: void bzero(void *s, size_t n);
+	bzero(&serv_addr, sizeof(serv_addr));
+	bzero(&client_addr, sizeof(client_addr));
+	serv_addr.sin_family = AF_INET;
+	serv_addr.sin_addr.s_addr = 0;
+	serv_addr.sin_port = htons(PORT);
+	//aus man: int bind(int sockfd, const struct sockaddr *addr,socklen_t addrlen);
+	if(bind(sfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
+		printf("binding faulture.\n\n");
+	memset (buffer, 0, sizeof(buffer));
+	
+	while(1)
+	{
+		while(msgLen<=0)
+		{
+			bufferLen=sizeof(client_addr);
+			
+		//aus man: ssize_t recvfrom(int sockfd, void *buf, size_t len, int flags, struct sockaddr *src_addr, socklen_t *addrlen);
+			msgLen=recvfrom(sfd,buffer,sizeof(buffer),0,(struct sockaddr *) &client_addr,(socklen_t *)&bufferLen);
+		}
+			printf("Datei empfangen. Diese lautet: \n%s\n\n",buffer);
+			
+			who=strtok(buffer, ";");
+			what=strtok(NULL, ";");
+			msg=strtok(NULL, ";");
+
+			printf("Der %s hat %s gemessen. Als zusätzliche Information wurde folgende Information mitgegeben: %s\".\n\n",who,what,msg);
+			
+			memset (buffer, 0, sizeof(buffer));
+			msgLen=0;
+			sendto(sfd,msg2,sizeof(msg2),0,(struct sockaddr *) &client_addr,sizeof(client_addr) );
+	}
+	//close();
+	return 0;
+}
