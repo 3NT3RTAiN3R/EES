@@ -1,0 +1,10 @@
+C:\Users\tobia\Desktop\projekt1\projekt1\bin\Debug\projekt1.exe.config
+C:\Users\tobia\Desktop\projekt1\projekt1\bin\Debug\projekt1.exe
+C:\Users\tobia\Desktop\projekt1\projekt1\bin\Debug\projekt1.pdb
+C:\Users\tobia\Desktop\projekt1\projekt1\obj\Debug\projekt1.csprojAssemblyReference.cache
+C:\Users\tobia\Desktop\projekt1\projekt1\obj\Debug\projekt1.Form1.resources
+C:\Users\tobia\Desktop\projekt1\projekt1\obj\Debug\projekt1.Properties.Resources.resources
+C:\Users\tobia\Desktop\projekt1\projekt1\obj\Debug\projekt1.csproj.GenerateResource.cache
+C:\Users\tobia\Desktop\projekt1\projekt1\obj\Debug\projekt1.csproj.CoreCompileInputs.cache
+C:\Users\tobia\Desktop\projekt1\projekt1\obj\Debug\projekt1.exe
+C:\Users\tobia\Desktop\projekt1\projekt1\obj\Debug\projekt1.pdb

@@ -8,7 +8,7 @@ O = in bearbeitung  <br>
 X = abgeschlossen
 
 # TODO
--
-
-# Meilensteine
--
+- Ultraschall Sensoren ansteuern                      [X]
+- daten von client lesen und verschicken              [X]
+- server wertet daten aus und gibt sie an GUI weiter  [X]
+- GUI praesentiert daten                              [X]
